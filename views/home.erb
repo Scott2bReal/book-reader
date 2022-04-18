@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <h2 class="content-subhead">Table of Contents</h2>
+
+          <div class="pure-menu">
+            <% @contents.each_with_index do |chapter, idx| %>
+            <ul class="pure-menu-list">
+              <li class="pure-menu-item">
+                <a href="/chapters/<%= idx + 1 %>" class="pure-menu-link"><%= "#{(idx + 1)}: #{chapter}" %></a>
+              </li>
+            <% end %>
+            </ul>
+          </div>
