@@ -30,7 +30,7 @@ helpers do
 
     each_chapter do |name, number, text|
       if text.match?(/#{query.downcase}/i)
-        results << {name: name, number: number, text: in_paragraphs(text)}
+        results << { name: name, number: number, text: in_paragraphs(text) }
       end
     end
 
@@ -38,7 +38,7 @@ helpers do
   end
 
   def highlight(query, text)
-    text.gsub(/#{query}/i, "<b>#{query}</b>")
+    text.gsub(/#{query}/i) { |string| "<b>#{string}</b>" }
   end
 end
 
